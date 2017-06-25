@@ -15,4 +15,20 @@ public class SmartphonesTest extends Initialization{
         mainPage.getNamesDevices();
 
     }
+
+    @Test
+    public void chooseNameAndPriceSecondPage() throws InterruptedException, FileNotFoundException {
+        mainPage.goToSmartphonesSection();
+        mainPage.waitElement(mainPage.getPage2(),15);
+        mainPage.getPage2().click();
+        mainPage.getNamesDevices();
+    }
+
+    @Test
+    public void chooseNameAndPriceThirdPage() throws InterruptedException, FileNotFoundException {
+        mainPage.goToSmartphonesSection();
+        mainPage.waitElement(mainPage.getPage3(),15);
+        mainPage.getPage3().click();
+        mainPage.getNamesDevices();
+    }
 }

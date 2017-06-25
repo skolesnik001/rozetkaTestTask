@@ -30,7 +30,7 @@ public class BasePage {
         new WebDriverWait(driver, period).until((ExpectedConditions.visibilityOf(element)));
     }
 
-    public void wait(int mills) {
+    public void waitt(int mills) {
         try {
             Thread.sleep(mills);
         } catch (InterruptedException e) {
