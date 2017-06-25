@@ -81,8 +81,9 @@ public class MainPage extends BasePage {
     }
 
     public void getNamesDevices() throws FileNotFoundException {
-        waitt(500);
+        waitt(700);
         if (driver.findElements(topSaleItemsBy).size() > 0) {
+
             List<String> nameDevicesAttribute = new ArrayList<>();
             List<String> priceDevicesAttribute = new ArrayList<>();
             for (int i = 0; i < topSaleItems.size(); i++) {
