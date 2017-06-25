@@ -83,7 +83,6 @@ public class MainPage extends BasePage {
     }
 
     public void getNamesDevices() throws FileNotFoundException {
-        waitElement(nameDevices,25);
         waitt(700);
         if (driver.findElements(topSaleItemsBy).size() > 0) {
 
