@@ -53,6 +53,20 @@ public class MainPage extends BasePage{
     @FindBy(xpath = ".//*[@class='g-tag g-tag-icon-middle-popularity sprite']/../../..")
     private List<WebElement> topSaleItems;
 
+    @FindBy(xpath = ".//*[@id='page2']")
+    private WebElement page2;
+
+    @FindBy(xpath = ".//*[@id='page2']")
+    private WebElement page3;
+
+    public WebElement getPage2(){
+        return page2;
+    }
+
+    public WebElement getPage3(){
+        return page3;
+    }
+
     public void goToSmartphonesSection() throws InterruptedException {
         waitElement(smartphonesTvAndElectronicsButton, 15);
         smartphonesTvAndElectronicsButton.click();
@@ -71,20 +85,14 @@ public class MainPage extends BasePage{
         for (int i = 0; i <topSaleItems.size(); i++) {
             nameDevicesAttribute.add(i,topSaleItems.get(i).findElement(By.xpath(".//*[@class='g-i-tile-i-title clearfix']/a")).getText());
             priceDevicesAttribute.add(i,topSaleItems.get(i).findElement(By.xpath(".//*[@class='g-price-uah']")).getText());}
-
-
         ArrayList <String> listOfTopSalesDevicesAndPrices =  new ArrayList<>();
         for (int i = 0; i <nameDevicesAttribute.size() ; i++) {
             listOfTopSalesDevicesAndPrices.add(i,nameDevicesAttribute.get(i)+" - "+priceDevicesAttribute.get(i)+"\n");
         }
-
         filesApp.saveResultInTXT(listOfTopSalesDevicesAndPrices);
-
         for (int i = 0; i <listOfTopSalesDevicesAndPrices.size() ; i++) {
             System.out.println( listOfTopSalesDevicesAndPrices.get(i));
         }
-
-
 
     }
 

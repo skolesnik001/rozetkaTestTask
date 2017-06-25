@@ -10,7 +10,7 @@ public class SmartphonesTest extends Initialization{
     MainPage mainPage = new MainPage(driver);
 
     @Test
-    public void chooseNameAndPrice() throws InterruptedException, FileNotFoundException {
+    public void chooseNameAndPriceFirstPage() throws InterruptedException, FileNotFoundException {
         mainPage.goToSmartphonesSection();
         mainPage.getNamesDevices();
 
