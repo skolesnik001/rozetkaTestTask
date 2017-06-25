@@ -47,6 +47,8 @@ public class MainPage extends BasePage {
     @FindBy(xpath = ".//*[@class='g-i-tile-i-title clearfix']/a")
     private WebElement nameDevices;
 
+    By nameDevicesBy = By.xpath(".//*[@class='g-i-tile-i-title clearfix']/a");
+
     @FindBy(xpath = ".//*[@class='prices_active_element_original']")
     private WebElement priceDevices;
 
@@ -81,6 +83,7 @@ public class MainPage extends BasePage {
     }
 
     public void getNamesDevices() throws FileNotFoundException {
+        waitElement(nameDevices,25);
         waitt(700);
         if (driver.findElements(topSaleItemsBy).size() > 0) {
 
@@ -101,8 +104,8 @@ public class MainPage extends BasePage {
 
         } else {
             waitt(500);
-            System.out.println("Top Sales not found");
-            filesApp.saveResultInTXT("Top Sales not found");
+            System.out.println("Devices with label \"Top Sales\" not found");
+            filesApp.saveResultInTXT("Devices with label \"Top Sales\" not found");
         }
 
     }
