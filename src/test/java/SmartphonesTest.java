@@ -14,6 +14,8 @@ public class SmartphonesTest extends Initialization{
         mainPage.goToSmartphonesSection();
         mainPage.getNamesDevices();
 
+
+
     }
 
     @Test

@@ -1,14 +1,20 @@
+import org.apache.bcel.generic.LUSHR;
+import org.openqa.jetty.util.StringBufferWriter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.SystemClock;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainPage extends BasePage {
+public class MainPage extends BasePage{
 
     protected WebDriver driver;
 
@@ -30,14 +36,14 @@ public class MainPage extends BasePage {
     @FindBy(xpath = ".//*[@id='menu_categories_left']/li[1]/h4/a")
     private WebElement phonesButton;
 
-    public WebElement getPhonesButton() {
+    public WebElement getPhonesButton(){
         return phonesButton;
     }
 
     @FindBy(xpath = ".//*[@id='menu_categories_left']/li[1]/div/a[1]")
     private WebElement smartphonesButton;
 
-    public WebElement getSmartphonesButton() {
+    public WebElement getSmartphonesButton(){
         return smartphonesButton;
     }
 
@@ -46,8 +52,6 @@ public class MainPage extends BasePage {
 
     @FindBy(xpath = ".//*[@class='g-i-tile-i-title clearfix']/a")
     private WebElement nameDevices;
-
-    By nameDevicesBy = By.xpath(".//*[@class='g-i-tile-i-title clearfix']/a");
 
     @FindBy(xpath = ".//*[@class='prices_active_element_original']")
     private WebElement priceDevices;
@@ -104,8 +108,9 @@ public class MainPage extends BasePage {
         } else {
             waitt(500);
             System.out.println("Devices with label \"Top Sales\" not found");
-            filesApp.saveResultInTXT("Devices with label \"Top Sales\" not found");
+
         }
 
     }
+
 }
