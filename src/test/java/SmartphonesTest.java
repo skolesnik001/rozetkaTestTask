@@ -34,3 +34,5 @@ public class SmartphonesTest extends Initialization{
         mainPage.getNamesDevices();
     }
 }
+
+/////////////////////////////////////////////////////////////////
